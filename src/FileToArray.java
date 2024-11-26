@@ -4,6 +4,22 @@ import java.util.ArrayList;
 import java.util.Scanner;
 import javax.swing.JOptionPane;
 
+/**
+ * Group 4: Project Manager
+ * 2024-11-26
+ * ICS3U1-01 Mrs. Biswas
+ * 
+ * Project: Laptop Central
+ * 
+ * Read laptops from csv file
+ * and Save them to the Database
+ * 
+ * Added Feature: 
+ *  - ArrayList
+ * 
+ * Areas of Concern:
+ *  - Remove ALL Extra Commas when editing the csv file
+ */
 public class FileToArray {
 
     /**
