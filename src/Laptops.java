@@ -24,8 +24,8 @@
 
 //Laptop class
 public class Laptops {
-	
-	//define fields/properties 
+
+	// define fields/properties
 	private String brand;
 	private String model;
 	private String type;
@@ -39,11 +39,11 @@ public class Laptops {
 	private int numOfUSBPorts;
 	private double displaySize;
 	private String link;
-	
-	//Constructor method
+
+	// Constructor method
+	@SuppressWarnings("OverridableMethodCallInConstructor")
 	public Laptops(String brand, String model, String type, double price, String os, String cPU, String gPU,
 			int sSD, int rAM, double weight, int numOfUSBPorts, double displaySize, String link) {
-		
 		this.brand = brand;
 		this.model = model;
 		setType(type);
@@ -58,8 +58,8 @@ public class Laptops {
 		setDisplaySize(displaySize);
 		this.link = link;
 	}
-	
-	//Getters and setters method 
+
+	// Getters and setters method
 	public String getBrand() {
 		return brand;
 	}
@@ -79,7 +79,9 @@ public class Laptops {
 	public String getType() {
 		return type;
 	}
-	//input validiation if user enters a string that is not Gaming, Professional or Student
+
+	// input validiation if user enters a string that is not Gaming, Professional or
+	// Student
 	public void setType(String type) {
 		if (type.equals("Gaming") || type.equals("Professional") || type.equals("Student"))
 			this.type = type;
@@ -90,7 +92,8 @@ public class Laptops {
 	public double getPrice() {
 		return price;
 	}
-	//input validation if value is less than 0
+
+	// input validation if value is less than 0
 	public void setPrice(double price) {
 		if (price > 0)
 			this.price = price;
@@ -125,18 +128,20 @@ public class Laptops {
 	public int getSSD() {
 		return SSD;
 	}
-	//input validation if value is less than 0
+
+	// input validation if value is less than 0
 	public void setSSD(int sSD) {
 		if (sSD > 0)
 			SSD = sSD;
-		else 
+		else
 			System.out.println("Invalid input");
 	}
 
 	public int getRAM() {
 		return RAM;
 	}
-	//input validation if value is less than 0
+
+	// input validation if value is less than 0
 	public void setRAM(int rAM) {
 		if (rAM > 0)
 			RAM = rAM;
@@ -147,7 +152,8 @@ public class Laptops {
 	public double getWeight() {
 		return weight;
 	}
-	//input validation if value is less than 0
+
+	// input validation if value is less than 0
 	public void setWeight(double weight) {
 		if (weight > 0)
 			this.weight = weight;
@@ -158,19 +164,20 @@ public class Laptops {
 	public int getNumOfUSBPorts() {
 		return numOfUSBPorts;
 	}
-	
-	//input validation if value is less than 0
+
+	// input validation if value is less than 0
 	public void setNumOfUSBPorts(int numOfUSBPorts) {
 		if (numOfUSBPorts > 0)
 			this.numOfUSBPorts = numOfUSBPorts;
-		else 
+		else
 			System.out.println("Invalid input");
 	}
 
 	public double getDisplaySize() {
 		return displaySize;
 	}
-	//input validation if value is less than 0
+
+	// input validation if value is less than 0
 	public void setDisplaySize(double displaySize) {
 		if (displaySize > 0)
 			this.displaySize = displaySize;
@@ -186,7 +193,8 @@ public class Laptops {
 		this.link = link;
 	}
 
-	//toString method which converts everything to a string 
+	// toString method which converts everything to a string
+	@Override
 	public String toString() {
 		return "Laptops [brand=" + brand + ", model=" + model + ", type=" + type + ", price=" + price
 				+ ", os=" + os + ", CPU=" + CPU + ", GPU=" + GPU + ", SSD=" + SSD + ", RAM="
