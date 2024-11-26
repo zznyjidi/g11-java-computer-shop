@@ -1,10 +1,10 @@
 //Project Header
-/*Group 4: Trisan Ramjohn
+/* Group 4: Trisan Ramjohn
  * November 25, 2024
  * ICS3U1-01 Mrs. Biswas
  * Laptop Central
  * This program is the laptop template class which creates the blueprint
- *for the objects
+ * for the objects
  */
 
 public class Laptops {
@@ -31,7 +31,7 @@ public class Laptops {
 		this.model = model;
 		this.type = type;
 		this.price = price;
-		this.os = os;
+		this.os = operatingSystem;
 		CPU = cPU;
 		GPU = gPU;
 		SSD = sSD;
@@ -154,14 +154,4 @@ public class Laptops {
 				+ RAM + ", weight=" + weight + ", numOfUSBPorts=" + numOfUSBPorts + ", displaySize=" + displaySize
 				+ ", link=" + link + "]";
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-
 }
