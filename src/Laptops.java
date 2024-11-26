@@ -1,12 +1,28 @@
-//Project Header
-/* Group 4: Trisan Ramjohn
- * November 25, 2024
+/*PROJECT HEADER
+ * Group 4; Trisan Ramjohn
+ * -----------------------
+ * Monday, November 25, 2024
+ * -----------------------
  * ICS3U1-01 Mrs. Biswas
+ * -----------------------
  * Laptop Central
- * This program is the laptop template class which creates the blueprint
- * for the objects
+ * -----------------------
+ * This program is the laptop template class which creates the 
+ * blueprint for the objects
+ * -----------------------
+ * Skills used in this program involve figuring out the fields and
+ * knowing where needs to be input validated
+ * -----------------------
+ * None
+ * -----------------------
+ * None
+ * -----------------------
+ * Completed all methods in the program
+ * Completed 100% of the work in this program
+ * -----------------------
  */
 
+//Laptop class
 public class Laptops {
 	
 	//define fields/properties 
@@ -25,20 +41,21 @@ public class Laptops {
 	private String link;
 	
 	//Constructor method
-	public Laptops(String brand, String model, String type, double price, String operatingSystem, String cPU, String gPU,
+	public Laptops(String brand, String model, String type, double price, String os, String cPU, String gPU,
 			int sSD, int rAM, double weight, int numOfUSBPorts, double displaySize, String link) {
+		
 		this.brand = brand;
 		this.model = model;
-		this.type = type;
-		this.price = price;
-		this.os = operatingSystem;
+		setType(type);
+		setPrice(price);
+		this.os = os;
 		CPU = cPU;
 		GPU = gPU;
-		SSD = sSD;
-		RAM = rAM;
-		this.weight = weight;
-		this.numOfUSBPorts = numOfUSBPorts;
-		this.displaySize = displaySize;
+		setSSD(sSD);
+		setRAM(rAM);
+		setWeight(weight);
+		setNumOfUSBPorts(numOfUSBPorts);
+		setDisplaySize(displaySize);
 		this.link = link;
 	}
 	
@@ -62,17 +79,23 @@ public class Laptops {
 	public String getType() {
 		return type;
 	}
-
+	//input validiation if user enters a string that is not Gaming, Professional or Student
 	public void setType(String type) {
-		this.type = type;
+		if (type.equals("Gaming") || type.equals("Professional") || type.equals("Student"))
+			this.type = type;
+		else
+			System.out.println("Invalid input");
 	}
 
 	public double getPrice() {
 		return price;
 	}
-
+	//input validation if value is less than 0
 	public void setPrice(double price) {
-		this.price = price;
+		if (price > 0)
+			this.price = price;
+		else
+			System.out.println("Invalid input");
 	}
 
 	public String getOS() {
@@ -102,41 +125,57 @@ public class Laptops {
 	public int getSSD() {
 		return SSD;
 	}
-
+	//input validation if value is less than 0
 	public void setSSD(int sSD) {
-		SSD = sSD;
+		if (sSD > 0)
+			SSD = sSD;
+		else 
+			System.out.println("Invalid input");
 	}
 
 	public int getRAM() {
 		return RAM;
 	}
-
+	//input validation if value is less than 0
 	public void setRAM(int rAM) {
-		RAM = rAM;
+		if (rAM > 0)
+			RAM = rAM;
+		else
+			System.out.println("Invalid input");
 	}
 
 	public double getWeight() {
 		return weight;
 	}
-
+	//input validation if value is less than 0
 	public void setWeight(double weight) {
-		this.weight = weight;
+		if (weight > 0)
+			this.weight = weight;
+		else
+			System.out.println("Invalid input");
 	}
 
 	public int getNumOfUSBPorts() {
 		return numOfUSBPorts;
 	}
-
+	
+	//input validation if value is less than 0
 	public void setNumOfUSBPorts(int numOfUSBPorts) {
-		this.numOfUSBPorts = numOfUSBPorts;
+		if (numOfUSBPorts > 0)
+			this.numOfUSBPorts = numOfUSBPorts;
+		else 
+			System.out.println("Invalid input");
 	}
 
 	public double getDisplaySize() {
 		return displaySize;
 	}
-
+	//input validation if value is less than 0
 	public void setDisplaySize(double displaySize) {
-		this.displaySize = displaySize;
+		if (displaySize > 0)
+			this.displaySize = displaySize;
+		else
+			System.out.println("Invalid input");
 	}
 
 	public String getLink() {
@@ -149,8 +188,8 @@ public class Laptops {
 
 	//toString method which converts everything to a string 
 	public String toString() {
-		return "Laptop [brand=" + brand + ", model=" + model + ", type=" + type + ", price=" + price
-				+ ", operatingSystem=" + os + ", CPU=" + CPU + ", GPU=" + GPU + ", SSD=" + SSD + ", RAM="
+		return "Laptops [brand=" + brand + ", model=" + model + ", type=" + type + ", price=" + price
+				+ ", os=" + os + ", CPU=" + CPU + ", GPU=" + GPU + ", SSD=" + SSD + ", RAM="
 				+ RAM + ", weight=" + weight + ", numOfUSBPorts=" + numOfUSBPorts + ", displaySize=" + displaySize
 				+ ", link=" + link + "]";
 	}
