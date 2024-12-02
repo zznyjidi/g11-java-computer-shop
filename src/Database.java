@@ -1,12 +1,14 @@
 import java.awt.Color;
 import java.awt.Font;
 import java.util.List;
-import javax.swing.JPanel;
+import javax.swing.JFrame;
 
 public class Database {
     static String laptopImageFormatString = "assets/computers/%d.jpg";
+    static int windowWidth = 1200;
+    static int windowHeight = 610;
 
-    static JPanel mainPanel;
+    static JFrame mainFrame;
     static List<Laptops> laptops;
 
     static Font fontTitle = new Font("Times New Roman", Font.BOLD, 40);

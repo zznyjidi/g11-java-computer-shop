@@ -216,19 +216,22 @@ public class SurveyFrame implements ActionListener {
 		SurveyResult result = new SurveyResult(answers);
 		JPanel resultPanel = new ResultPanel(result);
 		resultPanel.setBounds(0, 60, 1200, 550);
-		Database.mainPanel.add(resultPanel);
+		Database.mainFrame.add(resultPanel);
 	}
 
 	// Purpose of this method is to test the program
 	public static void main(String[] args) {
 		// Create main panel for the survey frame
-		JFrame frame = new JFrame("Survey");
+		Database.mainFrame = new JFrame("Survey");
+		JFrame frame = Database.mainFrame;
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setLayout(null);
 
+		FileToArray.readFileToDatabase("data/laptop-info.csv", 20);
+		
 		// Add background to the frame
 		// Set size of the frame
-		frame.setSize(800, 600);
+		frame.setSize(Database.windowWidth, Database.windowHeight);
 		// Set resizable to false
 		frame.setResizable(false);
 		SurveyFrame panel = new SurveyFrame();

@@ -1,3 +1,4 @@
+import java.util.Arrays;
 
 @SuppressWarnings("FieldMayBeFinal")
 public class SurveyResult {
@@ -89,5 +90,12 @@ public class SurveyResult {
         else if (laptop.getBrand().equalsIgnoreCase(targetBrand.toString()))
             matchScore += 1;
         return matchScore;
+    }
+
+    // toString
+    @Override
+    public String toString() {
+        return "SurveyResult [targetBudget=" + Arrays.toString(targetBudget) + ", targetType=" + targetType
+                + ", targetScreenSize=" + Arrays.toString(targetScreenSize) + ", targetBrand=" + targetBrand + "]";
     }
 }
