@@ -94,6 +94,10 @@ public class ResultComputerInfoPanel extends JPanel {
             computerImage
         );
         infoPanel.setBounds(0, 0, 200, 420);
+        // bugfix: Force Rerender Window to Make Panel shows up
+        testFrame.revalidate();
+        testFrame.repaint();
+
         testFrame.add(infoPanel);
     }
 }
