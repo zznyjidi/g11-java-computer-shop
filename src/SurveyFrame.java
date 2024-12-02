@@ -91,8 +91,8 @@ public class SurveyFrame implements ActionListener {
 		JLabel surveyLabel = new JLabel("Survey");
 		surveyLabel.setLayout(new FlowLayout(FlowLayout.CENTER));
 		surveyLabel.setBounds(325, 0, 460, 60);
-		surveyLabel.setForeground(new Color(0xffffff));
-		surveyLabel.setFont(new Font("Times New Roman", Font.BOLD, 40));
+		surveyLabel.setForeground(Database.colorForeground);
+		surveyLabel.setFont(Database.fontTitle);
 		mainPanel.add(surveyLabel);
 
 		// Component to set surveyLabel to the front of panel1
@@ -110,15 +110,15 @@ public class SurveyFrame implements ActionListener {
 			JPanel radioPanel = new JPanel();
 			radioPanel.setLayout(new GridLayout(2, 2));
 			radioPanel.setBounds(0, 125 + i * 100, 800, 60);
-			radioPanel.setBackground(new Color(0x3482ba));
+			radioPanel.setBackground(Database.colorBackgroundPanel);
 			mainPanel.add(radioPanel);
 
 			// Create and style question label
 			// Add questionLabel to radioPanel
 			JLabel questionLabel = new JLabel(question.getQuestionPrompt());
 			questionLabel.setBounds(0, 95 + i * 100, 800, 50);
-			questionLabel.setForeground(new Color(0xfffff));
-			questionLabel.setFont(new Font("Times New Roman", Font.PLAIN, 20));
+			questionLabel.setForeground(Database.colorForegroundQuestion);
+			questionLabel.setFont(Database.fontTextDefault);
 			questionLabel.setLayout(new FlowLayout());
 			radioPanel.add(questionLabel);
 
@@ -132,9 +132,9 @@ public class SurveyFrame implements ActionListener {
 				// Create and style radiobuttons
 				options[i][j] = new JRadioButton(question.getOptions()[j]);
 				options[i][j].setOpaque(false);
-				options[i][j].setForeground(new Color(0xffffff));
-				options[i][j].setBackground(new Color(0x3428ba));
-				options[i][j].setFont(new Font("New Times Roman", Font.PLAIN, 15));
+				options[i][j].setForeground(Database.colorForeground);
+				options[i][j].setBackground(Database.colorBackgroundTitle);
+				options[i][j].setFont(Database.fontTextSmall);
 
 				// Add button group to the group
 				// Add radio buttons to panel2
@@ -147,8 +147,8 @@ public class SurveyFrame implements ActionListener {
 		// Add submitButton to mainPanel
 		submitButton = new JButton("SUBMIT");
 		submitButton.setBounds(400, 500, 150, 50);
-		submitButton.setForeground(new Color(0x3428ba));
-		submitButton.setFont(new Font("New Times Roman", Font.PLAIN, 20));
+		submitButton.setForeground(Database.colorBackgroundTitle);
+		submitButton.setFont(Database.fontTextDefault);
 		submitButton.addActionListener(this);
 		mainPanel.add(submitButton);
 
@@ -156,8 +156,8 @@ public class SurveyFrame implements ActionListener {
 		// Add randomButton to mainPanel
 		randomButton = new JButton("RANDOM");
 		randomButton.setBounds(200, 500, 150, 50);
-		randomButton.setForeground(new Color(0x3428ba));
-		randomButton.setFont(new Font("New Times Roman", Font.PLAIN, 20));
+		randomButton.setForeground(Database.colorBackgroundTitle);
+		randomButton.setFont(Database.fontTextDefault);
 		randomButton.addActionListener(this);
 		mainPanel.add(randomButton);
 
@@ -213,9 +213,7 @@ public class SurveyFrame implements ActionListener {
 	private void displayResults(String[] answers) {
 		// Displaying results in results frame
 		// Zixuan helped me with this peice of code
-		for (String answer : answers) {
-			System.out.println(answer);
-		}
+		SurveyResult result = new SurveyResult(answers);
 	}
 
 	// Purpose of this method is to test the program

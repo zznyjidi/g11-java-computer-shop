@@ -16,13 +16,14 @@ public class ResultComputerInfoPanel extends JPanel {
     private JLabel computerInfoLabel;
     private JLabel computerPriceLabel;
     private JButton moreInfoButton;
+    private JLabel matchPercentageLabel;
 
     /**
      * JPanel that display the Laptop info
      * @param laptop Laptop object that contains info for the laptop
      * @param computerImage Image for the Laptop
      */
-    public ResultComputerInfoPanel(Laptops laptop, Image computerImage) {
+    public ResultComputerInfoPanel(ResultEntry result, Image computerImage) {
         super();
         setLayout(null);
         // Computer Image
@@ -35,6 +36,7 @@ public class ResultComputerInfoPanel extends JPanel {
         computerImageLabel.setBounds(0, 0, 200, 200);
         this.add(computerImageLabel);
 
+        Laptops laptop = result.getLaptop();
         // Computer Name
         computerModelLabel = new JLabel(laptop.getModel());
         computerModelLabel.setFont(Database.fontComputerModel);
@@ -67,6 +69,14 @@ public class ResultComputerInfoPanel extends JPanel {
         moreInfoButton = new JButton("More Info");
         moreInfoButton.setBounds(55, 365, 90, 25);
         this.add(moreInfoButton);
+
+        // Match Percentage
+        matchPercentageLabel = new JLabel(String.format("%.1f%% Match", (result.getMatchScore()/4)*100));
+        matchPercentageLabel.setFont(Database.fontHighlight);
+        matchPercentageLabel.setForeground(Database.colorForegroundHighlight);
+        matchPercentageLabel.setHorizontalAlignment(SwingConstants.CENTER);
+        matchPercentageLabel.setBounds(0, 395, 200, 20);
+        this.add(matchPercentageLabel);
     }
 
     public static void main(String[] args) {
@@ -80,10 +90,10 @@ public class ResultComputerInfoPanel extends JPanel {
         FileToArray.readFileToDatabase("data/laptop-info.csv", 20);
 
         JPanel infoPanel = new ResultComputerInfoPanel(
-            Database.laptops.get(19), 
+            new ResultEntry(3.5, Database.laptops.get(19)), 
             computerImage
         );
-        infoPanel.setBounds(0, 0, 200, 400);
+        infoPanel.setBounds(0, 0, 200, 420);
         testFrame.add(infoPanel);
     }
 }
