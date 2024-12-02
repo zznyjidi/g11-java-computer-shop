@@ -5,6 +5,7 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.SwingConstants;
 
 @SuppressWarnings({ "FieldMayBeFinal", "serial" })
 public class ResultComputerInfoPanel extends JPanel {
@@ -15,34 +16,46 @@ public class ResultComputerInfoPanel extends JPanel {
     private JLabel computerPriceLabel;
     private JButton moreInfoButton;
 
+
     public ResultComputerInfoPanel(String computerName, Image computerImage, String computerInfo) {
+        super();
+        setLayout(null);
         // Computer Image
-        computerImageIcon = new ImageIcon(
-            // Resize Image 
-            // (From https://stackoverflow.com/questions/6714045/how-to-resize-jlabel-imageicon)
-            computerImage.getScaledInstance(300, 300, java.awt.Image.SCALE_SMOOTH)
-        );
+        // Resize Image 
+        // (From https://stackoverflow.com/questions/6714045/how-to-resize-jlabel-imageicon)
+        Image scaledImage = computerImage.getScaledInstance(200, 200, Image.SCALE_SMOOTH);
+        computerImageIcon = new ImageIcon(scaledImage);
         computerImageLabel = new JLabel(computerImageIcon);
-        //computerImageLabel.setBounds(0, 0, 300, 300);
+        computerImageLabel.setBounds(0, 0, 200, 200);
         this.add(computerImageLabel);
 
         // Computer Name
         computerModelLabel = new JLabel(computerName);
-        //computerModelLabel.setBounds(320, 0, 300, 20);
+        computerModelLabel.setFont(Database.fontComputerModel);
+        computerModelLabel.setHorizontalAlignment(SwingConstants.CENTER);
+        computerModelLabel.setBounds(0, 200, 200, 24);
         this.add(computerModelLabel);
-
+        
         // Computer Info
         computerInfoLabel = new JLabel(computerInfo);
-        //computerInfoLabel.setBounds(340, 0, 300, 300);
+        computerInfoLabel.setHorizontalAlignment(SwingConstants.CENTER);
+        computerInfoLabel.setVerticalAlignment(SwingConstants.TOP);
+        computerInfoLabel.setBounds(0, 225, 200, 20);
         this.add(computerInfoLabel);
     }
 
     public static void main(String[] args) {
         JFrame testFrame = new JFrame();
+        testFrame.setLayout(null);
         testFrame.setVisible(true);
-        testFrame.setSize(1000, 1000);
-        Image computer = new ImageIcon("assets/computers/5.png").getImage();
-        JPanel infoPanel = new ResultComputerInfoPanel("Test Computer", computer, "");
+        testFrame.setSize(1200, 610);
+        Image computerImage = new ImageIcon("assets/computers/5.png").getImage();
+
+        JPanel infoPanel = new ResultComputerInfoPanel(
+            "Test Computer", 
+            computerImage, 
+            "Something");
+        infoPanel.setBounds(0, 0, 200, 400);
         testFrame.add(infoPanel);
     }
 }
