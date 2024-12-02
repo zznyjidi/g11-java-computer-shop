@@ -7,6 +7,7 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.WindowConstants;
 
+@SuppressWarnings("FieldMayBeFinal")
 public class ResultPanel extends JPanel {
     private JPanel[] infoPanels = new JPanel[3];
 

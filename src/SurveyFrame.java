@@ -214,6 +214,9 @@ public class SurveyFrame implements ActionListener {
 		// Displaying results in results frame
 		// Zixuan helped me with this peice of code
 		SurveyResult result = new SurveyResult(answers);
+		JPanel resultPanel = new ResultPanel(result);
+		resultPanel.setBounds(0, 60, 1200, 550);
+		Database.mainPanel.add(resultPanel);
 	}
 
 	// Purpose of this method is to test the program
