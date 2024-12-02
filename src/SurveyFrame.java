@@ -52,7 +52,7 @@ public class SurveyFrame implements ActionListener {
 		//Initalize the questions
 		questions = new Question[] {
 				new Question("What is your budget?",
-						new String[] { "Under $1000", "$1000 - $2000", "$2000 - $2500", "$Over $2500" }),
+						new String[] { "Under $1000", "$1000 - $2000", "$2000 - $2500", "Over $2500" }),
 				new Question("What type of computer are you looking for?",
 						new String[] { "Student", "Gaming", "Professional" }),
 				new Question("What screen size do you want?",
