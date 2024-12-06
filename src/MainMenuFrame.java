@@ -23,10 +23,10 @@ public class MainMenuFrame extends JPanel {
 		// set corlor
 		centralLabel.setForeground(Color.WHITE);
 		// set position and size
-		centralLabel.setBounds(100, 250, 600, 80);
+		centralLabel.setBounds(100, 350, 600, 80);
 
 		// Set background color for the panel
-		this.setBackground(new Color(60, 100, 160));
+		this.setBackground(new Color(60, 200, 160));
 
 		// Add the labels to the panel
 		this.add(laptopLabel);
