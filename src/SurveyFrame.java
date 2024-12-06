@@ -73,15 +73,15 @@ public class SurveyFrame implements ActionListener {
 
 		// Create main panel for the survey frame
 		mainPanel = new JPanel(null);
-		mainPanel.setBounds(0, 0, 800, 600);
+		mainPanel.setBounds(0, 0, 1200, 550);
 
 		// Create JLabel that holds the image for the mainPanel
 		JLabel mainBackground = new JLabel(new ImageIcon("assets/mainBackground.png"));
-		mainBackground.setBounds(0, 0, 800, 600);
+		mainBackground.setBounds(0, 0, 1200, 550);
 
 		// Create JLabel that holds the image for the surveyLabel
 		JLabel surveyPanelBackground = new JLabel(new ImageIcon("assets/otherBackground.png"));
-		surveyPanelBackground.setBounds(0, 0, 800, 60);
+		surveyPanelBackground.setBounds(0, 0, 1200, 60);
 
 		// Add image to mainPanel
 		mainPanel.add(surveyPanelBackground);
@@ -90,7 +90,7 @@ public class SurveyFrame implements ActionListener {
 		// Add survey label to mainPanel
 		JLabel surveyLabel = new JLabel("Survey");
 		surveyLabel.setLayout(new FlowLayout(FlowLayout.CENTER));
-		surveyLabel.setBounds(325, 0, 460, 60);
+		surveyLabel.setBounds(530, 0, 800, 60);
 		surveyLabel.setForeground(Database.colorForeground);
 		surveyLabel.setFont(Database.fontTitle);
 		mainPanel.add(surveyLabel);
@@ -109,7 +109,7 @@ public class SurveyFrame implements ActionListener {
 			// Add radioPanel to the mainPanel
 			JPanel radioPanel = new JPanel();
 			radioPanel.setLayout(new GridLayout(2, 2));
-			radioPanel.setBounds(0, 125 + i * 100, 800, 60);
+			radioPanel.setBounds(0, 100 + i * 90, 1200, 60);
 			radioPanel.setBackground(Database.colorBackgroundPanel);
 			mainPanel.add(radioPanel);
 
@@ -146,7 +146,7 @@ public class SurveyFrame implements ActionListener {
 		// Create and style submitButton
 		// Add submitButton to mainPanel
 		submitButton = new JButton("SUBMIT");
-		submitButton.setBounds(400, 500, 150, 50);
+		submitButton.setBounds(600, 450, 150, 50);
 		submitButton.setForeground(Database.colorBackgroundTitle);
 		submitButton.setFont(Database.fontTextDefault);
 		submitButton.addActionListener(this);
@@ -155,7 +155,7 @@ public class SurveyFrame implements ActionListener {
 		// Create and style randomButton
 		// Add randomButton to mainPanel
 		randomButton = new JButton("RANDOM");
-		randomButton.setBounds(200, 500, 150, 50);
+		randomButton.setBounds(400, 450, 200, 50);
 		randomButton.setForeground(Database.colorBackgroundTitle);
 		randomButton.setFont(Database.fontTextDefault);
 		randomButton.addActionListener(this);
@@ -168,7 +168,6 @@ public class SurveyFrame implements ActionListener {
 
 	// Method that deals with the action events of
 	// the submitButton and radioButton
-	@Override
 	public void actionPerformed(ActionEvent e) {
 		if (e.getSource() == submitButton) {
 			submitAction();
