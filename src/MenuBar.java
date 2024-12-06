@@ -33,9 +33,7 @@ public class MenuBar extends JPanel {
                         return null;
                     };
                     case 3 -> () -> {
-                        JFrame eduFrame = new EducationFrame();
-                        eduFrame.setVisible(true);
-                        System.out.println("EducationFrame");
+                        changePanel(new EducationFrame());
                         return null;
                     };
                     case 4 -> () -> {

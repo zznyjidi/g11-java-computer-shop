@@ -23,5 +23,5 @@ public class Application {
         // bugfix: Force Rerender Window to Make Panel shows up
         mainFrame.revalidate();
         mainFrame.repaint();
-}
+	}
 }
