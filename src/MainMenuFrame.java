@@ -5,20 +5,14 @@ import java.awt.event.ActionListener;
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JPanel;
 
-public class MainMenuFrame extends JFrame implements ActionListener {
+public class MainMenuFrame extends JPanel implements ActionListener {
 
-	// Method for the main menu frame
+	// Method for the main menu panel
 	public MainMenuFrame() {
 
 		// Create conponent
-		// mainframe
-		JFrame frame = new JFrame("Laptop Central");
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		// Set frame size
-		frame.setSize(800, 600);
-		// layout for precise positioning
-		frame.setLayout(null);
 
 		// Create the "LAPTOP" label
 		JLabel laptopLabel = new JLabel("LAPTOP");
@@ -35,15 +29,12 @@ public class MainMenuFrame extends JFrame implements ActionListener {
 		// set position and size
 		centralLabel.setBounds(100, 250, 600, 80);
 
-		// Set background color for the frame
-		frame.getContentPane().setBackground(new Color(60, 100, 160));
+		// Set background color for the panel
+		this.setBackground(new Color(60, 100, 160));
 
-		// Add the labels to the frame
-		frame.add(laptopLabel);
-		frame.add(centralLabel);
-
-		// Set frame visibility
-		frame.setVisible(true);
+		// Add the labels to the panel
+		this.add(laptopLabel);
+		this.add(centralLabel);
 	}
 
 	public static void main(String[] args) {
