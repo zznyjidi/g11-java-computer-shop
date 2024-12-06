@@ -129,7 +129,7 @@ public class InventoryFrame extends JFrame implements ActionListener {
 	}
 
 	// Method to open specific laptop frame
-	private void openSpecificLaptopFrame(Laptops laptopObject, Image computerImage) {
+	public static void openSpecificLaptopFrame(Laptops laptopObject, Image computerImage) {
 
 		// create laptopInfo which contain:
 		// CPU, GPU, OS, RAM, SSD

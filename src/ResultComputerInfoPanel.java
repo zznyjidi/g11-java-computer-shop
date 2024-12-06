@@ -1,5 +1,7 @@
 
 import java.awt.Image;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -9,7 +11,9 @@ import javax.swing.SwingConstants;
 import javax.swing.WindowConstants;
 
 @SuppressWarnings({ "FieldMayBeFinal", "serial" })
-public class ResultComputerInfoPanel extends JPanel {
+public class ResultComputerInfoPanel extends JPanel implements ActionListener {
+    private Laptops laptopObject;
+    private Image laptopImage;
     private ImageIcon computerImageIcon;
     private JLabel computerImageLabel;
     private JLabel computerModelLabel;
@@ -27,6 +31,7 @@ public class ResultComputerInfoPanel extends JPanel {
         super();
         setLayout(null);
         // Computer Image
+        laptopImage = computerImage;
         computerImageIcon = new ImageIcon(
             // Resize Image 
             // (From https://stackoverflow.com/questions/6714045/how-to-resize-jlabel-imageicon)
@@ -37,6 +42,7 @@ public class ResultComputerInfoPanel extends JPanel {
         this.add(computerImageLabel);
 
         Laptops laptop = result.getLaptop();
+        laptopObject = laptop;
         // Computer Name
         computerModelLabel = new JLabel(laptop.getModel());
         computerModelLabel.setFont(Database.fontComputerModel);
@@ -69,6 +75,7 @@ public class ResultComputerInfoPanel extends JPanel {
         moreInfoButton = new JButton("More Info");
         moreInfoButton.setBounds(55, 365, 90, 25);
         this.add(moreInfoButton);
+        moreInfoButton.addActionListener(this);
 
         // Match Percentage
         matchPercentageLabel = new JLabel(String.format("%.1f%% Match", (result.getMatchScore()/4)*100));
@@ -78,6 +85,12 @@ public class ResultComputerInfoPanel extends JPanel {
         matchPercentageLabel.setBounds(0, 395, 200, 20);
         this.add(matchPercentageLabel);
     }
+
+    @Override
+	public void actionPerformed(ActionEvent e) {
+		if (e.getSource().equals(moreInfoButton))
+            InventoryFrame.openSpecificLaptopFrame(laptopObject, laptopImage);
+	}
 
     public static void main(String[] args) {
         JFrame testFrame = new JFrame();

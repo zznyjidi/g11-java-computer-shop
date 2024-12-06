@@ -42,6 +42,10 @@ public class ResultPanel extends JPanel {
         SurveyResult result = new SurveyResult(new String[] {"Under $1000", "Student", "14.1 in - 15 in", "Don't Care"});
         JPanel resultPanel = new ResultPanel(result);
         resultPanel.setBounds(0, 60, 1200, 550);
+        // bugfix: Force Rerender Window to Make Panel shows up
+        testFrame.revalidate();
+        testFrame.repaint();
+
         testFrame.add(resultPanel);
     }
 }

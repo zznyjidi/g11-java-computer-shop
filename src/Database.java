@@ -4,7 +4,7 @@ import java.util.List;
 import javax.swing.JFrame;
 
 public class Database {
-    static String laptopImageFormatString = "assets/computers/%d.jpg";
+    static String laptopImageFormatString = "assets/computers/%d.png";
     static int windowWidth = 1200;
     static int windowHeight = 610;
 
