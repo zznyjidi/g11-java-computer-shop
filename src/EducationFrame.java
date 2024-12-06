@@ -2,18 +2,12 @@ import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 
-public class EducationFrame extends JFrame implements ActionListener {
+public class EducationFrame extends JPanel implements ActionListener {
 	
 	private EducationInfoPanel infoPanel;  // Panel to show information
     
     // Constructor for setting up the frame
     public EducationFrame() {
-        // Set up the frame (window)
-        setTitle("Education");
-        //setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setSize(1200, 600); // Set the size of the window
-        setLocation(280, 120); // Set position of the frame
-
         // Title Label - Displays "Education" at the top
         JLabel titleLabel = new JLabel("Education", JLabel.CENTER);
         titleLabel.setFont(new Font("Arial", Font.BOLD, 50));
