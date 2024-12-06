@@ -1,13 +1,9 @@
 import java.awt.Color;
 import java.awt.Font;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-
-import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-public class MainMenuFrame extends JPanel implements ActionListener {
+public class MainMenuFrame extends JPanel {
 
 	// Method for the main menu panel
 	public MainMenuFrame() {
@@ -39,10 +35,5 @@ public class MainMenuFrame extends JPanel implements ActionListener {
 
 	public static void main(String[] args) {
 		new MainMenuFrame();
-	}
-
-	@Override
-	public void actionPerformed(ActionEvent event) {
-
 	}
 }

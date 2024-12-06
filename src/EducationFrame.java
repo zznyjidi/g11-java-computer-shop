@@ -1,6 +1,6 @@
-import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
+import javax.swing.*;
 
 public class EducationFrame extends JFrame implements ActionListener {
 	
@@ -10,7 +10,7 @@ public class EducationFrame extends JFrame implements ActionListener {
     public EducationFrame() {
         // Set up the frame (window)
         setTitle("Education");
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        //setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setSize(1200, 600); // Set the size of the window
         setLocation(280, 120); // Set position of the frame
 

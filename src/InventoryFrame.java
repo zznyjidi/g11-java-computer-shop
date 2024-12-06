@@ -32,7 +32,7 @@ public class InventoryFrame extends JFrame implements ActionListener {
 		setSize(800, 600);
 
 		// Exit the application when the frame is closed
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		//setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
 		// Create a main panel to hold the computer panels
 		JPanel mainPanel = new JPanel();
