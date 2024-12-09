@@ -3,7 +3,6 @@ import java.awt.Font;
 import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -44,7 +43,8 @@ public class specificLaptopFrame extends JFrame implements ActionListener {
 		setLayout(null);
 		setTitle(computerName);
 		setSize(600, 700);
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		// bugfix: more info frame close main window
+		//-setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setResizable(false);
 
 		// Set up and add title label

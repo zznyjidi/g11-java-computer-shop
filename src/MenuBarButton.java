@@ -17,7 +17,7 @@ public class MenuBarButton extends JButton implements ActionListener {
     public MenuBarButton(Image icon, String text, Callable<Void> action) {
         this.setLayout(new FlowLayout());
         this.add(new JLabel(new ImageIcon(
-            icon.getScaledInstance(50, 50, Image.SCALE_SMOOTH)
+            icon.getScaledInstance(35, 35, Image.SCALE_SMOOTH)
         )));
 
         this.add(new JLabel(text));
