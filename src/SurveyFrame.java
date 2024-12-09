@@ -216,12 +216,10 @@ public class SurveyFrame implements ActionListener {
 		JPanel resultPanel = new ResultPanel(result);
 		resultPanel.setBounds(0, 60, 1200, 550);
 		
-		Database.mainFrame.remove(mainPanel);
+		Database.menuBar.changePanel(resultPanel);
 		// bugfix: Force Rerender Window to Make Panel shows up
         Database.mainFrame.revalidate();
         Database.mainFrame.repaint();
-
-		Database.mainFrame.add(resultPanel);
 	}
 
 	// Purpose of this method is to test the program

@@ -2,7 +2,6 @@ import java.awt.Color;
 import java.awt.Font;
 import java.util.List;
 import javax.swing.JFrame;
-import javax.swing.JPanel;
 
 public class Database {
     static String laptopImageFormatString = "assets/computers/%d.png";
@@ -10,7 +9,7 @@ public class Database {
     static int windowHeight = 610;
 
     static JFrame mainFrame;
-    static JPanel foregroundPanel;
+    static MenuBar menuBar;
     static List<Laptops> laptops;
 
     static Font fontTitle = new Font("Times New Roman", Font.BOLD, 40);

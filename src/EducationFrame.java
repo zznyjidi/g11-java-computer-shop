@@ -16,8 +16,7 @@ public class EducationFrame extends JPanel implements ActionListener {
 
         // Create a JPanel to hold the buttons and organize them in a grid layout
         JPanel buttonPanel = new JPanel();
-        buttonPanel.setLayout(new FlowLayout(FlowLayout.CENTER, 70, 240)); // Center aligned, with spacing
-
+        buttonPanel.setLayout(new FlowLayout(FlowLayout.CENTER, 70, 80)); // Center aligned, with spacing
         // Add buttons with different images
         buttonPanel.add(createButton("assets/computer_parts/cpu.png", "CPU"));
         buttonPanel.add(createButton("assets/computer_parts/gpu.png", "GPU"));
@@ -31,7 +30,7 @@ public class EducationFrame extends JPanel implements ActionListener {
         // Layout for the frame's content
         setLayout(new BorderLayout()); // Use BorderLayout for better organization
         add(titleLabel, BorderLayout.NORTH); // Title at the top
-        add(buttonPanel, BorderLayout.WEST); // Buttons on the left side
+        add(buttonPanel, BorderLayout.SOUTH); // Buttons on the center side
         add(infoPanel, BorderLayout.CENTER); // Information panel in the center
     }
 

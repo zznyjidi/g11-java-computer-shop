@@ -18,6 +18,8 @@ public class Application {
         menuBar.setBounds(0, 0, 1200, 60);
         mainFrame.add(menuBar);
 
+        Database.menuBar = menuBar;
+
 		menuBar.changePanel(new MainMenuFrame());
 
         // bugfix: Force Rerender Window to Make Panel shows up
